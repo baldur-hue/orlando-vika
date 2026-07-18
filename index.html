@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">☀️</text></svg>'>
+<style>*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%}</style>
+</head>
+<body>
+<title>Orlando-vikan · 19.–27. júlí</title>
+<style>
+  :root {
+    --sand: #F1F5F3;
+    --card: #FFFFFF;
+    --ink: #0C2A2E;
+    --ink-soft: #4A625F;
+    --line: #DDE7E3;
+    --teal: #0E7C86;
+    --teal-deep: #0B5B63;
+    --gold: #E8971B;
+    --coral: #F0603F;
+    --green: #3F9B6D;
+    --slate: #5E7A86;
+    --shadow: 0 1px 2px rgba(12,42,46,.06), 0 8px 24px rgba(12,42,46,.06);
+    --radius: 18px;
+    --maxw: 720px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sand: #08191C;
+      --card: #0E262B;
+      --ink: #EAF3F0;
+      --ink-soft: #9CB4B0;
+      --line: #1C3A40;
+      --teal: #3FB6C0;
+      --teal-deep: #6FD0D6;
+      --gold: #FFC15E;
+      --coral: #FF816E;
+      --green: #57C089;
+      --slate: #8FAAB6;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --sand: #F1F5F3; --card: #FFFFFF; --ink: #0C2A2E; --ink-soft: #4A625F;
+    --line: #DDE7E3; --teal: #0E7C86; --teal-deep: #0B5B63; --gold: #E8971B;
+    --coral: #F0603F; --green: #3F9B6D; --slate: #5E7A86;
+    --shadow: 0 1px 2px rgba(12,42,46,.06), 0 8px 24px rgba(12,42,46,.06);
+  }
+  :root[data-theme="dark"] {
+    --sand: #08191C; --card: #0E262B; --ink: #EAF3F0; --ink-soft: #9CB4B0;
+    --line: #1C3A40; --teal: #3FB6C0; --teal-deep: #6FD0D6; --gold: #FFC15E;
+    --coral: #FF816E; --green: #57C089; --slate: #8FAAB6;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 16px 64px; }
+
+  /* ---- Masthead ---- */
+  .mast {
+    padding: 30px 4px 20px;
+    text-align: left;
+  }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--teal); font-weight: 700; margin: 0 0 8px;
+  }
+  .mast h1 {
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(38px, 12vw, 64px);
+    line-height: .95;
+    letter-spacing: -.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .mast h1 .sun { color: var(--gold); }
+  .mast .sub {
+    margin: 14px 0 0; color: var(--ink-soft); font-size: 15px; max-width: 46ch;
+  }
+  .count {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    margin-top: 18px; padding: 9px 15px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 999px; box-shadow: var(--shadow);
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .count b { font-size: 20px; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  /* ---- Weather rule ---- */
+  .rule {
+    margin: 8px 4px 22px; padding: 16px 18px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 12%, var(--card)), var(--card));
+    border: 1px solid var(--line); border-left: 4px solid var(--gold);
+    border-radius: 14px; font-size: 14.5px; color: var(--ink);
+  }
+  .rule b { color: var(--ink); }
+
+  /* ---- Day nav ---- */
+  .nav {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; gap: 8px; overflow-x: auto;
+    padding: 12px 4px; margin: 0 -16px 20px; padding-left: 16px; padding-right: 16px;
+    background: color-mix(in srgb, var(--sand) 86%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto; text-decoration: none;
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 46px; padding: 7px 10px; border-radius: 12px;
+    background: var(--card); border: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 11px; font-weight: 600;
+    letter-spacing: .04em; text-transform: uppercase;
+    transition: transform .12s ease;
+  }
+  .nav a b { font-size: 16px; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+  .nav a.on { background: var(--teal); border-color: var(--teal); }
+  .nav a.on, .nav a.on b { color: #fff; }
+  .nav a:active { transform: scale(.94); }
+
+  /* ---- Day card ---- */
+  .day {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 22px 20px; margin-bottom: 18px;
+    scroll-margin-top: 74px;
+    position: relative; overflow: hidden;
+  }
+  .day::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    background: var(--accent, var(--teal));
+  }
+  .day.rest   { --accent: var(--green); }
+  .day.water  { --accent: var(--teal); }
+  .day.beach  { --accent: var(--gold); }
+  .day.indoor { --accent: var(--slate); }
+  .day.park   { --accent: var(--coral); }
+  .day.church { --accent: var(--teal-deep); }
+  .day.home   { --accent: var(--gold); }
+
+  .day-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .day-when { font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin: 0; }
+  .day-title { font-size: clamp(22px, 6vw, 28px); font-weight: 800; letter-spacing: -.02em; margin: 4px 0 0; text-wrap: balance; }
+  .tag {
+    flex: 0 0 auto; font-size: 11px; font-weight: 800; letter-spacing: .04em;
+    text-transform: uppercase; padding: 6px 11px; border-radius: 999px;
+    color: #fff; background: var(--accent); white-space: nowrap;
+  }
+  .today-badge {
+    display: inline-block; margin-top: 10px; font-size: 11px; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--coral);
+    border: 1.5px solid var(--coral); border-radius: 999px; padding: 3px 10px;
+  }
+  .lede { margin: 14px 0 0; color: var(--ink); font-size: 15px; }
+
+  /* chips (drive time etc) */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip {
+    font-size: 12.5px; font-weight: 600; color: var(--ink-soft);
+    background: color-mix(in srgb, var(--accent) 10%, var(--card));
+    border: 1px solid var(--line); border-radius: 10px; padding: 6px 11px;
+  }
+  .chip b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  /* timeline */
+  .tl { margin: 18px 0 0; border-top: 1px dashed var(--line); }
+  .tl-row {
+    display: grid; grid-template-columns: 66px 1fr; gap: 14px;
+    padding: 11px 0; border-bottom: 1px dashed var(--line);
+  }
+  .tl-time { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 14px; color: var(--accent); }
+  .tl-what { font-size: 14.5px; margin: 0; }
+  .tl-what small { display: block; color: var(--ink-soft); font-size: 12.5px; margin-top: 2px; }
+
+  /* suggestion / note boxes */
+  .note {
+    margin-top: 16px; padding: 13px 15px; border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 8%, var(--card));
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+    font-size: 13.5px; color: var(--ink);
+  }
+  .note b { color: var(--ink); }
+  .note .lbl { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 5px; }
+  .note ul { margin: 6px 0 0; padding-left: 18px; }
+  .note li { margin: 3px 0; }
+
+  /* fast pass button */
+  .fp { margin-top: 16px; }
+  .fp-btn {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    text-decoration: none; padding: 14px 18px; border-radius: 14px;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 15px;
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 40%, transparent);
+    transition: transform .12s ease, filter .12s ease;
+  }
+  .fp-btn:active { transform: scale(.98); filter: brightness(.95); }
+  .fp-btn .arw { font-weight: 400; opacity: .9; }
+  .fp-price { margin: 9px 2px 0; font-size: 12.5px; color: var(--ink-soft); }
+  .fp-price b { color: var(--ink); }
+
+  /* ---- Weather strip ---- */
+  .wx {
+    background: linear-gradient(160deg, color-mix(in srgb, var(--teal) 14%, var(--card)), var(--card));
+    border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 16px 14px; margin: 0 4px 14px; box-shadow: var(--shadow);
+  }
+  .wx-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .wx-title { font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); }
+  .wx-updated { font-size: 11px; color: var(--ink-soft); }
+  .wx-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+  .wx-tile {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 12px 6px; border-radius: 12px; background: var(--card); border: 1px solid var(--line);
+  }
+  .wx-tile.now { border-color: color-mix(in srgb, var(--gold) 50%, var(--line)); background: color-mix(in srgb, var(--gold) 8%, var(--card)); }
+  .wx-day { font-size: 11px; font-weight: 700; color: var(--ink-soft); letter-spacing: .03em; }
+  .wx-ico { font-size: 24px; line-height: 1; }
+  .wx-t { font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .wx-r { font-size: 11px; color: var(--teal); font-weight: 600; }
+  .wx-note { margin: 11px 2px 0; font-size: 11.5px; color: var(--ink-soft); line-height: 1.5; }
+
+  .past { opacity: .5; }
+
+  footer { text-align: center; color: var(--ink-soft); font-size: 12.5px; margin-top: 34px; line-height: 1.7; }
+  footer a { color: var(--teal); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  html { scroll-behavior: smooth; }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <p class="eyebrow">Fjölskylduferð · Champions Gate, FL</p>
+    <h1>Orlando<span class="sun">.</span><br>síðasta vikan</h1>
+    <p class="sub">Planið fyrir 19.–27. júlí. Við eltum sólina — dagar færast til eftir veðri.</p>
+    <div class="count"><b id="cd">–</b> <span id="cdlabel">reikna…</span></div>
+  </header>
+
+  <!-- WX:START — daglega keyrslan uppfærir ALLT á milli þessara marka, ekkert annað -->
+  <section class="wx" id="wx">
+    <div class="wx-head">
+      <span class="wx-title">☀️ Veður · Champions Gate</span>
+      <span class="wx-updated">Uppfært 18. júlí — sjálfvirkt kl. 07:00 á hverjum morgni</span>
+    </div>
+    <div class="wx-grid">
+      <div class="wx-tile now"><span class="wx-day">Í dag · lau 18.</span><span class="wx-ico">⛅️</span><span class="wx-t">33°</span><span class="wx-r">☔ 3%</span></div>
+      <div class="wx-tile"><span class="wx-day">Sun · 19.</span><span class="wx-ico">☀️</span><span class="wx-t">34°</span><span class="wx-r">☔ 1%</span></div>
+      <div class="wx-tile"><span class="wx-day">Mán · 20.</span><span class="wx-ico">☀️</span><span class="wx-t">35°</span><span class="wx-r">☔ 0%</span></div>
+    </div>
+    <p class="wx-note"><b>Ráð dagsins:</b> Sól og þurrt næstu daga — fullkomið fyrir laug og útiveru. Engin þörf á að hliðra útidögum enn.</p>
+  </section>
+  <!-- WX:END -->
+
+
+  <div class="rule">
+    ☀️ <b>Sólarreglan:</b> útidagar (strönd, garðar) fara á sólríkustu dagana, inni-mallið geymist fyrir skúradag. Í júlí koma síðdegisþrumur nánast daglega <b>~14–17</b> — þess vegna er allt útivistar-plan sett <b>að morgni</b>.
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="#d19"><span>Sun</span><b>19</b></a>
+    <a href="#d20"><span>Mán</span><b>20</b></a>
+    <a href="#d21"><span>Þri</span><b>21</b></a>
+    <a href="#d22"><span>Mið</span><b>22</b></a>
+    <a href="#d23"><span>Fim</span><b>23</b></a>
+    <a href="#d24"><span>Fös</span><b>24</b></a>
+    <a href="#d25"><span>Lau</span><b>25</b></a>
+    <a href="#d26"><span>Sun</span><b>26</b></a>
+  </nav>
+
+  <!-- SUNNUDAGUR 19 -->
+  <section class="day church" id="d19" data-date="2026-07-19">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Sunnudagur · 19. júlí</p>
+        <h2 class="day-title">Samkoma & Chris í Tampa</h2>
+      </div>
+      <span class="tag">Kirkja</span>
+    </div>
+    <p class="lede">Snemma af stað til Tampa á Forum í Grace Family Church. Chris tekur á móti, svo hangs og hádegismatur heima hjá honum — og eitthvað í Tampa áður en haldið er heim.</p>
+    <div class="chips">
+      <span class="chip">Akstur: Champions Gate → Tampa <b>~1 klst 15 mín</b></span>
+      <span class="chip">Brottför: <b>07:15</b></span>
+    </div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-time">06:30</div><p class="tl-what">Ræs — allir vaknaðir<small>Þarf að vera fyrr til að ná 07:15 brottför</small></p></div>
+      <div class="tl-row"><div class="tl-time">07:05</div><p class="tl-what">Búin að borða og klár</p></div>
+      <div class="tl-row"><div class="tl-time">07:15</div><p class="tl-what">Leggja af stað til Tampa</p></div>
+      <div class="tl-row"><div class="tl-time">08:30</div><p class="tl-what">Mæta við Grace Family Church<small>Staðfestu kampus við Chris — GFC er með marga í Tampa</small></p></div>
+      <div class="tl-row"><div class="tl-time">09:00</div><p class="tl-what">Forum — samkoman. Chris bíður eftir okkur</p></div>
+      <div class="tl-row"><div class="tl-time">~10:30</div><p class="tl-what">Heim til Chris — hangs + hádegismatur</p></div>
+      <div class="tl-row"><div class="tl-time">eftir hád.</div><p class="tl-what">Frjálst: sjá eitthvað eða borða í Tampa</p></div>
+      <div class="tl-row"><div class="tl-time">~19:30</div><p class="tl-what">Keyra heim eftir að umferð dettur niður<small>Heima ~20:45</small></p></div>
+    </div>
+    <div class="note">
+      <span class="lbl">Tillögur — síðdegi í Tampa</span>
+      <ul>
+        <li><b>Armature Works</b> — matarhöll við ána, eitthvað fyrir alla</li>
+        <li><b>Tampa Riverwalk / Curtis Hixon Park</b> — ganga við vatnið</li>
+        <li><b>Sparkman Wharf</b> — útiveitingar við höfnina</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Umferðarráð</span>
+      I-4 aftur til Orlando er þung <b>~17–19</b> á sunnudagskvöldi (garðafólk að fara heim). Annað hvort af stað <b>fyrir 16:30</b> eða <b>eftir 19:30</b> — ekki festast í miðjunni. Ég mæli með seinni kostinum: njóta síðdegis, borða snemma, keyra rólega heim.
+    </div>
+  </section>
+
+  <!-- MÁNUDAGUR 20 -->
+  <section class="day rest" id="d20" data-date="2026-07-20">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Mánudagur · 20. júlí</p>
+        <h2 class="day-title">Relax — við chillum</h2>
+      </div>
+      <span class="tag">Hvíld</span>
+    </div>
+    <p class="lede">Ekkert planað. Hvíld eftir Tampa-daginn — laugin, húsið, rólegheit. Sama hvað veðrið gerir.</p>
+    <div class="note">
+      <span class="lbl">Hugmyndir ef þið nennið út</span>
+      <ul>
+        <li><b>Old Town Kissimmee</b> — gamli bærinn, tívolí á kvöldin, ~20 mín</li>
+        <li><b>Disney Springs</b> — röltа, búðir og kvöldmatur (útisvæði, skuggi), ~25 mín</li>
+        <li><b>Mini-golf</b> nálægt Champions Gate — létt og fyndið fyrir Hörpu</li>
+        <li><b>Champions Gate golf</b> ef þú vilt slá nokkur högg</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Lítið ráð</span>
+      Heitasti tíminn er <b>12–15</b>. Nýtið laugina snemma morguns og aftur seinnipart — sleppið hábjartri sól um miðjan dag.
+    </div>
+  </section>
+
+  <!-- ÞRIÐJUDAGUR 21 -->
+  <section class="day water" id="d21" data-date="2026-07-21">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Þriðjudagur · 21. júlí</p>
+        <h2 class="day-title">Vatnsrennibrautagarður</h2>
+      </div>
+      <span class="tag">Aquatica</span>
+    </div>
+    <p class="lede">Aquatica er rétt hjá SeaWorld. Lykillinn í júlí: <b>mæta við opnun</b> — náið stól og skugga áður en þeir klárast, og brautirnar eru stystar á morgnana.</p>
+    <div class="chips">
+      <span class="chip">Akstur: → Aquatica Orlando <b>~25–30 mín</b></span>
+      <span class="chip">Opnar <b>10:00</b></span>
+    </div>
+    <div class="fp">
+      <a class="fp-btn" href="https://aquatica.com/orlando/upgrades/quick-queue/" target="_blank" rel="noopener">Bóka Quick Queue — Aquatica <span class="arw">↗</span></a>
+      <p class="fp-price">Unlimited frá <b>$29</b> · PLUS frá <b>$39</b>. Dagsett verð, hærra í júlí.</p>
+    </div>
+    <div class="note">
+      <span class="lbl">Þarf ég flýtiröð hér?</span>
+      Bara ef þið ætlið að fara <b>mikið</b> í brautir og hata raðir. Annars: snemmmæting dugar og þú sparar peninginn. Hnappurinn er hér ef þið viljið samt.
+    </div>
+    <div class="note">
+      <span class="lbl">Hugmyndir</span>
+      <ul>
+        <li><b>Leigið cabana/skuggasæti</b> fyrirfram ef til er — í júlí er skuggi gulls ígildi</li>
+        <li><b>Roa's Rapids</b> og letiáin fyrir alla; brattari brautir fyrir ykkur eldri</li>
+        <li>Ef þið viljið stærri vatnsgarð seinna: <b>Volcano Bay</b> (Universal) er stórbrotnari, sér dagur</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MIÐVIKUDAGUR 22 -->
+  <section class="day beach" id="d22" data-date="2026-07-22">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Miðvikudagur · 22. júlí</p>
+        <h2 class="day-title">Cocoa Beach — strandardagur</h2>
+      </div>
+      <span class="tag">Strönd · Sól</span>
+    </div>
+    <p class="lede">Austur á Atlantshafsströndina eftir FL-528 (Beachline, tollur). Best að vera mætt fyrir hádegishitann og fara heim þegar síðdegisskúrirnar byrja.</p>
+    <div class="chips">
+      <span class="chip">Akstur: → Cocoa Beach <b>~1 klst 20–30 mín</b></span>
+      <span class="chip">85 mílur · FL-528 tollur</span>
+    </div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-time">08:00</div><p class="tl-what">Morgunmatur + pakka strandpokann</p></div>
+      <div class="tl-row"><div class="tl-time">08:45</div><p class="tl-what">Leggja af stað (FL-528 austur)</p></div>
+      <div class="tl-row"><div class="tl-time">~10:10</div><p class="tl-what">Á ströndinni — á undan mesta hitanum</p></div>
+      <div class="tl-row"><div class="tl-time">10–13:30</div><p class="tl-what">Strönd, sund, sól</p></div>
+      <div class="tl-row"><div class="tl-time">13:30</div><p class="tl-what">Hádegismatur — Cocoa Beach Pier eða nágrenni</p></div>
+      <div class="tl-row"><div class="tl-time">~15:00</div><p class="tl-what">Leggja af stað þegar dregur til skúra</p></div>
+      <div class="tl-row"><div class="tl-time">~16:45</div><p class="tl-what">Heima</p></div>
+    </div>
+    <div class="note">
+      <span class="lbl">Muna</span>
+      Sólarvörn, vatn, hattur. Tollar á FL-528 — athugaðu að bílaleigubíllinn (Turo) sé með SunPass eða greiddu á netinu eftir á.
+    </div>
+    <div class="note">
+      <span class="lbl">Hugmyndir á staðnum</span>
+      <ul>
+        <li><b>Cocoa Beach Pier</b> — matur, tónlist, klassísk stemning yfir sjónum</li>
+        <li><b>Ron Jon Surf Shop</b> — risastór, opin allan sólarhringinn, gaman að rölta</li>
+        <li><b>Kennedy Space Center</b> er ~40 mín norðar — heill dagur einn og sér, en gott að vita af</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Veður</span>
+      Þetta er <b>sólardagur</b>. Ef spáin er slæm miðvikudag → skiptu við annan sólardag (t.d. laugardag).
+    </div>
+  </section>
+
+  <!-- FIMMTUDAGUR 23 -->
+  <section class="day indoor" id="d23" data-date="2026-07-23">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Fimmtudagur · 23. júlí</p>
+        <h2 class="day-title">Frjáls dagur — veljið</h2>
+      </div>
+      <span class="tag">Velja</span>
+    </div>
+    <p class="lede">Enginn fastur plan. Veðurpúði milli stóru daganna — veljið eftir spánni þennan morgun. Hér eru hugmyndir, sól eða skúrir.</p>
+    <div class="note">
+      <span class="lbl">☀️ Ef sól</span>
+      <ul>
+        <li><b>Gatorland</b> — krókódílar, klassískt Flórída, ~30 mín</li>
+        <li><b>ICON Park</b> á International Drive — hjólið, veitingar, ~25 mín</li>
+        <li><b>Aukastranddagur</b> eða annar garður ef orkan er til</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">🌧️ Ef hiti eða skúrir (allt loftkælt)</span>
+      <ul>
+        <li><b>Mall at Millenia</b> (fínni) eða <b>The Florida Mall</b> (stærsti), ~25–35 mín</li>
+        <li><b>Disney Springs</b> — búðir, bíó og matur undir þaki að mestu</li>
+        <li><b>Crayola Experience</b> eða <b>WonderWorks</b> — inni, gaman fyrir Hörpu</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Til hvers þessi dagur er</span>
+      Þetta er sveigjanlegi dagurinn: ef strönd eða SeaWorld lentu í rigningu fyrr í vikunni, færið þau hingað. Annars léttur dagur.
+    </div>
+  </section>
+
+  <!-- FÖSTUDAGUR 24 -->
+  <section class="day park" id="d24" data-date="2026-07-24">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Föstudagur · 24. júlí</p>
+        <h2 class="day-title">Busch Gardens · Tampa</h2>
+      </div>
+      <span class="tag">Heill dagur</span>
+    </div>
+    <p class="lede">Lengsti dagurinn — rússíbanagarður <b>og</b> dýragarður í einu, plús 1,5 klst akstur hvora leið. Mætið fyrir opnun; það er allt.</p>
+    <div class="chips">
+      <span class="chip">Akstur: → Busch Gardens <b>~1 klst 5–15 mín</b></span>
+      <span class="chip">Opnar <b>10:00</b> · ~11–13 klst dagur</span>
+    </div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-time">07:30</div><p class="tl-what">Leggja af stað frá Champions Gate</p></div>
+      <div class="tl-row"><div class="tl-time">09:15</div><p class="tl-what">Á bílastæðinu — FYRIR opnun</p></div>
+      <div class="tl-row"><div class="tl-time">10:00</div><p class="tl-what">Iron Gwazi FYRST<small>Röðin þar vex allan daginn — takið hann strax</small></p></div>
+      <div class="tl-row"><div class="tl-time">10–13</div><p class="tl-what">Stóru rússíbanarnir meðan raðir eru stuttar</p></div>
+      <div class="tl-row"><div class="tl-time">14–17</div><p class="tl-what">Dýrin, Serengeti, sýning<small>Skuggatíminn — heitast og mögulegar skúrir</small></p></div>
+      <div class="tl-row"><div class="tl-time">17–20</div><p class="tl-what">Seinni umferð — styttri raðir á kvöldin</p></div>
+      <div class="tl-row"><div class="tl-time">20:00</div><p class="tl-what">Keyra heim → ~21:15</p></div>
+    </div>
+    <div class="fp">
+      <a class="fp-btn" href="https://buschgardens.com/tampa/upgrades/rides-and-presentations/" target="_blank" rel="noopener">Bóka Quick Queue — Busch Gardens <span class="arw">↗</span></a>
+      <p class="fp-price">Unlimited frá <b>$39,99</b> · PLUS <b>$74,99</b> · Junior (Harpa) <b>$19,99</b></p>
+    </div>
+    <div class="note">
+      <span class="lbl">Fast pass — hverjar? (lestu þetta)</span>
+      <ul>
+        <li><b>Iron Gwazi er EKKI í venjulega passanum.</b> Aðeins Unlimited PLUS ($74,99) nær honum — og bara <b>eina ferð</b>.</li>
+        <li>Besta ráðið: <b>mæta snemma og fara beint á Iron Gwazi</b> — sleppa PLUS.</li>
+        <li>Viljið flýtiröð á hin tækin? <b>Quick Queue Unlimited ($39,99)</b> er skynsamlegri en PLUS.</li>
+        <li>Harpa: <b>Quick Queue Junior ($19,99)</b>.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Hugmyndir</span>
+      <ul>
+        <li><b>Gíraffafóðrun á Serengeti</b> — bókið fyrirfram, hápunktur fyrir Hörpu</li>
+        <li><b>Adventure Island</b>, vatnsgarður Busch, er við hliðina ef þið viljið kæla ykkur</li>
+        <li>Takið <b>vatnsbrúsa</b> — áfyllingarstöðvar úti um allt, sparar bæði pening og hita</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LAUGARDAGUR 25 -->
+  <section class="day park" id="d25" data-date="2026-07-25" style="--accent: var(--teal);">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Laugardagur · 25. júlí</p>
+        <h2 class="day-title">SeaWorld <span style="font-weight:600;color:var(--ink-soft);font-size:.62em;">· mitt val</span></h2>
+      </div>
+      <span class="tag">Sól-sveigjanlegt</span>
+    </div>
+    <p class="lede">Ég setti SeaWorld hér því laugardagurinn var opinn og þetta er síðasti heili dagurinn. <b>En veljið sólardag</b> — ef laugardagsspáin er slæm, skiptið SeaWorld og strönd/vatnsgarð.</p>
+    <div class="chips">
+      <span class="chip">Akstur: → SeaWorld Orlando <b>~25–30 mín</b></span>
+      <span class="chip">6–8 klst dugar</span>
+    </div>
+    <div class="note">
+      <span class="lbl">Dagsplan</span>
+      Sýningarnar (Orca, höfrungar) eru á <b>föstum tímum</b> → náið í tímaplanið strax við innganginn og byggið daginn kringum þær. Tækin á morgnana.
+    </div>
+    <div class="fp">
+      <a class="fp-btn" href="https://seaworld.com/orlando/upgrades/rides-and-shows/" target="_blank" rel="noopener">Bóka Quick Queue — SeaWorld <span class="arw">↗</span></a>
+      <p class="fp-price">Unlimited frá <b>$29,99</b> (tæki) · PLUS + sæti frá <b>$49,99</b> (líka frátekin sýningarsæti)</p>
+    </div>
+    <div class="note">
+      <span class="lbl">Hugmyndir</span>
+      <ul>
+        <li><b>Orca-sýningin</b> og höfrungarnir eru hápunktarnir — ekki missa af þeim</li>
+        <li>Ef þið viljið dekra: <b>Discovery Cove</b> við hliðina (synda með höfrungum) — dýrt og þarf að bóka löngu fyrir</li>
+        <li>Samsettur miði SeaWorld + Aquatica getur borgað sig — athugið verðið</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SUNNUDAGUR 26 — HEIM -->
+  <section class="day home" id="d26" data-date="2026-07-26">
+    <div class="day-head">
+      <div>
+        <p class="day-when">Sunnudagur · 26. júlí</p>
+        <h2 class="day-title">Heim — brottfarardagur</h2>
+      </div>
+      <span class="tag">Flug</span>
+    </div>
+    <p class="lede">Húsið er ykkar til <b>27.</b> — engin þörf á að pakka út snemma. Rólegur morgunn, svo á völlinn. Flugið er FI686 kl. 22:00.</p>
+    <div class="chips">
+      <span class="chip">Akstur: → MCO Terminal C <b>~35–40 mín</b></span>
+      <span class="chip">Millilandaflug: mæta <b>3 klst</b> fyrir</span>
+    </div>
+    <div class="tl">
+      <div class="tl-row"><div class="tl-time">morgunn</div><p class="tl-what">Ef veður er gott → laugin í Champions Gate, slökun<small>Síðasti sundsprettur</small></p></div>
+      <div class="tl-row"><div class="tl-time">síðdegi</div><p class="tl-what">Pakka, þrífa, skila Turo-bílnum</p></div>
+      <div class="tl-row"><div class="tl-time">~18:45</div><p class="tl-what">Leggja af stað á MCO — Terminal C</p></div>
+      <div class="tl-row"><div class="tl-time">19:00</div><p class="tl-what">Á vellinum — innritun + öryggi</p></div>
+      <div class="tl-row"><div class="tl-time">22:00</div><p class="tl-what">FI686 · MCO → KEF</p></div>
+      <div class="tl-row"><div class="tl-time">09:25 <span style="font-size:11px;">+1</span></div><p class="tl-what">Lenda í Keflavík — mánudag 27.</p></div>
+    </div>
+    <div class="note">
+      <span class="lbl">Hugmyndir fyrir rólegan morgun</span>
+      <ul>
+        <li><b>Síðasti sundsprettur</b> í lauginni ef sól</li>
+        <li><b>Brunch</b> nálægt — First Watch eða Keke's eru vinsæl í Orlando</li>
+        <li>Fylla á bílinn nálægt vellinum áður en Turo er skilað (ódýrara en við MCO)</li>
+      </ul>
+    </div>
+    <div class="note">
+      <span class="lbl">Muna</span>
+      Skila Turo-bílnum, tékka húsið, öll vegabréf. Terminal C er nýja byggingin — fylgið skiltum „Terminal C", ekki Terminal 1/2.
+    </div>
+  </section>
+
+  <footer>
+    Planið er sveigjanlegt — færið dagana eftir veðri, við eltum sólina ☀️<br>
+    SeaWorld · Aquatica · Busch Gardens eru öll í eigu United Parks — athugið samsettan miða.
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    // Countdown to fly-home day
+    var home = new Date(2026, 6, 26); // 26 Júlí 2026
+    var now = new Date();
+    var t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.round((home - t0) / 86400000);
+    var cd = document.getElementById('cd');
+    var lbl = document.getElementById('cdlabel');
+    if (days > 1) { cd.textContent = days; lbl.textContent = 'dagar þar til heim'; }
+    else if (days === 1) { cd.textContent = '1'; lbl.textContent = 'dagur þar til heim'; }
+    else if (days === 0) { cd.textContent = '✈'; lbl.textContent = 'heimferðardagur'; }
+    else { cd.textContent = '♥'; lbl.textContent = 'komin heim — takk fyrir ferðina'; }
+
+    // Mark past days + highlight today
+    var todayKey = t0.getFullYear() + '-' + String(t0.getMonth()+1).padStart(2,'0') + '-' + String(t0.getDate()).padStart(2,'0');
+    document.querySelectorAll('.day').forEach(function (el) {
+      var d = el.getAttribute('data-date');
+      if (d < todayKey) el.classList.add('past');
+      if (d === todayKey) {
+        var head = el.querySelector('.day-head > div');
+        var b = document.createElement('span');
+        b.className = 'today-badge';
+        b.textContent = '● Í dag';
+        head.appendChild(b);
+        el.scrollIntoView({ block: 'center' });
+      }
+    });
+
+    // Active nav chip on scroll
+    var map = {};
+    document.querySelectorAll('.nav a').forEach(function (a) {
+      map[a.getAttribute('href').slice(1)] = a;
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.nav a').forEach(function (x) { x.classList.remove('on'); });
+          var a = map[e.target.id];
+          if (a) { a.classList.add('on'); a.scrollIntoView({ inline: 'center', block: 'nearest' }); }
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('.day').forEach(function (s) { io.observe(s); });
+  })();
+</script>
+</body>
+</html>
